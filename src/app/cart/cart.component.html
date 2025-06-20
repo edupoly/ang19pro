@@ -1,0 +1,39 @@
+<!-- {{ps.cartItems()|json}} -->
+<div class="p-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th class="text-center">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for(prod of ps.cartItems();track $index){
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{prod.title}}</td>
+                <td>{{prod.price}}</td>
+                <td class="fs-5">
+                    <i (click)="ps.decItemCount(prod)" class="bi bi-dash-circle"></i>
+                    {{prod.count}}
+                    <i (click)="ps.incItemCount(prod)" class="bi bi-plus-circle"></i>
+                </td>
+                <td class="text-center">
+                    <b>{{(prod.count*prod.price).toFixed(2)}}</b>
+                </td>
+            </tr>
+            }
+        </tbody>
+        <tfoot class="border border-2">
+            <tr>
+                <td colspan="5">
+                    <h4 class="text-end border border-3">Total:{{getTotal()}}</h4>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

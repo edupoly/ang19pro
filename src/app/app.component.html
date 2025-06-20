@@ -1,6 +1,7 @@
 <div class="border border-2 border-success m-2 p-2">
   <h1>Hello Edupoly Angular App Development</h1>
-  <a href="/ctr">Counter</a>&nbsp;&nbsp;&nbsp;
-  <a href="/products">Products</a>&nbsp;&nbsp;&nbsp;
+  <a [routerLink]="['/ctr']">Counter</a>&nbsp;&nbsp;&nbsp;
+  <a [routerLink]="['/products']">Products</a>&nbsp;&nbsp;&nbsp;
+  <a [routerLink]="['/cart']">Cart {{ps.cartItems().length}}</a>&nbsp;&nbsp;&nbsp;
 </div>
 <router-outlet></router-outlet>

@@ -4,6 +4,12 @@
         <li style="width:200px" class="m-3">
             <img [src]="prod.image" style="height:200px" class="w-100" alt="">
             <h4>{{prod.title.slice(0,20)}}</h4>
+            @if(ps.isInCart(prod)){
+            <a [routerLink]="['/cart']" class="btn btn-warning">Go To Cart</a>
+            }
+            @else{
+            <button class="btn btn-success" (click)="addItemToCart(prod)">Add To Cart</button>
+            }
         </li>
         }
     </ul>
