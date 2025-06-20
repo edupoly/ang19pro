@@ -1,0 +1,10 @@
+<div class="border border-2 border-warning m-2 p-2">
+    <ul class="list-unstyled d-flex flex-wrap justify-content-between">
+        @for(prod of allproducts();track $index){
+        <li style="width:200px" class="m-3">
+            <img [src]="prod.image" style="height:200px" class="w-100" alt="">
+            <h4>{{prod.title.slice(0,20)}}</h4>
+        </li>
+        }
+    </ul>
+</div>
