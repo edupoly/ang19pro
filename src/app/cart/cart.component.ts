@@ -1,10 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { ProductsService } from '../products.service';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
-  imports: [JsonPipe],
+  imports: [],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
