@@ -1,0 +1,19 @@
+<div class="p-5">
+    <table class="table table-striped">
+        <tbody>
+            @for(prod of ps.cartItems();track $index){
+            <tr>
+                <td>{{prod.title}}</td>
+                <td>{{prod.price}}</td>
+                <td>
+                    <i class="bi bi-dash-circle" (click)="ps.decItemCount(prod)"></i>
+                    {{prod.count}}
+                    <i class="bi bi-plus-circle" (click)="ps.incItemCount(prod)"></i>
+                </td>
+                <td>{{prod.count*prod.price}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
